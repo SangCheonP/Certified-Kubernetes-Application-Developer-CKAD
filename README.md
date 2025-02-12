@@ -3,11 +3,11 @@
 시험의 주요 개념을 실습과 함께 정리하며, Kubernetes 기본 개념부터 Pod, Deployment, Networking, Storage, Security, Troubleshooting을 포함합니다.
 
 ## 📂 디렉토리 구조
-- **00_Basics**: Kubernetes 기본 개념 및 핵심 요소
+- **00_Basic**: Kubernetes 기본 개념 및 핵심 요소
 - **01_YAML**: YAML 문법 및 예제
-- **02_Pods**: Pod 구조 및 주요 기능 (Init Container, Multi-Container 등)
-- **03_Deployments**: ReplicaSet, Scaling, Rolling Update 등
-- **04_Services_Networking**: Service, Ingress, Network Policies
+- **02_Pod**: Pod 구조 및 주요 기능 (Init Container, Multi-Container 등)
+- **03_Deployment**: ReplicaSet, Scaling, Rolling Update 등
+- **04_Service_Networking**: Service, Ingress, Network Policies
 - **05_Storage**: PV, PVC, StorageClass 등
 - **06_Security**: RBAC, Security Context, Network Policies
 - **07_Troubleshooting**: Kubernetes 디버깅 및 문제 해결 방법
