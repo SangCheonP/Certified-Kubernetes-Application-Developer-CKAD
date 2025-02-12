@@ -1,6 +1,6 @@
-# 🏗️ 쿠버네티스(Kubernetes) 아키텍처
+# 🏗️ Kubernetes_Architecture(쿠버네티스_아키텍처)
 
-![KakaoTalk_20250212_161425905](https://github.com/user-attachments/assets/944372e6-9a57-4d56-af79-f21ca24d2289)
+![Kubernetes_Architecture](https://github.com/user-attachments/assets/944372e6-9a57-4d56-af79-f21ca24d2289)
 
 
 ## 1️⃣ 쿠버네티스 클러스터 개요
