@@ -27,6 +27,9 @@ kubectl apply -f deployment.yml
 
 #### ✅ 사용 예시
 ```sh
+kubectl set image deployment/<DEPLOYMENT_NAME> <CONTAINER_NAME>=<IMAGE>:<TAG>
+
+kubectl set image deployment myapp-deployment nginx=nginx:1.10.0
 kubectl set image deployment/myapp-deployment nginx=nginx:1.10.0
 ```
 
@@ -99,13 +102,17 @@ kubectl get deployments
 
 ### ✅ 특정 Deployment의 배포 상태 확인
 ```sh
+kubectl rollout status deployment myapp-deployment
 kubectl rollout status deployment/myapp-deployment
 ```
+📌 **Deployment를 지정할 때, `deployment/` 또는 공백을 사용해도 동일하게 동작함.**
 
 ### ✅ Deployment 변경 이력 확인
 ```sh
+kubectl rollout history deployment myapp-deployment
 kubectl rollout history deployment/myapp-deployment
 ```
+📌 **Kubernetes에서는 `deployment`만 입력해도 자동으로 `deployment.apps`와 매칭됨.**
 
 ---
 <br>
@@ -114,17 +121,20 @@ kubectl rollout history deployment/myapp-deployment
 
 ### 4.1 최신 버전으로 롤백
 ```sh
+kubectl rollout undo deployment myapp-deployment
 kubectl rollout undo deployment/myapp-deployment
 ```
 
 ### 4.2 특정 버전으로 롤백
 ```sh
+kubectl rollout undo deployment myapp-deployment --to-revision=2
 kubectl rollout undo deployment/myapp-deployment --to-revision=2
 ```
 
 #### 📌 롤백 시 주의점
 - `kubectl apply` 실행 시 YAML 기준으로 덮어씌워질 수 있음
 - `kubectl set`으로 변경한 내용이 있으면 `kubectl get deployment -o yaml`로 업데이트 필요
+- 롤백 이후에도 새로운 리비전이 생성됨 (`REVISION N+1`)
 
 ---
 <br>
@@ -138,4 +148,3 @@ kubectl rollout undo deployment/myapp-deployment --to-revision=2
 | `kubectl get deployment myapp-deployment -o yaml > deployment.yml` | ✅ | ✅ (반영됨) |
 
 📌 **Deployment 관리를 YAML 중심으로 유지하려면 `kubectl apply`를 사용하고, `kubectl set`을 사용할 경우 변경 내용을 YAML에도 반영해야 한다.**
-
