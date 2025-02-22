@@ -134,3 +134,10 @@ curl http://<LoadBalancer IP>
 
 📌 **반면 LoadBalancer를 사용하면 클라우드 환경에서 자동으로 부하 분산을 수행하고, 특정 IP로 안정적인 외부 접근이 가능하다!** 🚀
 
+---
+<br>
+
+## **🚀 추가 사항**
+- **Service는 자기 자신을 식별할 필요가 없으므로 `metadata.labels`를 정의하지 않는다.**
+- **Service의 `selector`는 단순한 key-value 매칭 방식이므로, `matchLabels`를 사용할 필요가 없다.**
+- **반면, ReplicaSet과 같은 컨트롤러는 특정 파드를 정밀하게 매칭해야 하므로 `matchLabels` 및 `matchExpressions`를 사용한다.**
